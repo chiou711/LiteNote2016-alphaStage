@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cwc.litenote.alpha"
+    android:versionCode="4"
+    android:versionName="alpha 1.2" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+    
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />	
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="com.google.android.apps.photos.permission.GOOGLE_PHOTOS"/>	
+	<uses-feature android:name="android.hardware.camera" 
+	    		  android:required="false"/>
+	<uses-feature android:name="android.hardware.camera.autofocus" />    
+    <application
+        android:name="com.cwc.litenote.util.UilApplication"
+        android:allowBackup="true"
+		android:largeHeap="true"        
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.cwc.litenote.DrawerActivity"
+            android:theme="@style/CustomTheme"
+            android:label="@string/app_name">
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.cwc.litenote.TabsHost" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+	   		<intent-filter>
+			   <action android:name="android.intent.action.SEND" />
+			   <category android:name="android.intent.category.DEFAULT" />              
+			   <data android:host="www.youtube.com" android:mimeType="text/*" />
+			</intent-filter>
+		</activity>
+        <activity android:name="com.cwc.litenote.TabsHost" 
+            	  android:theme="@style/CustomTheme"/>
+        <activity android:name="com.cwc.litenote.note.Note_addNewText" 
+            	  android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.cwc.litenote.note.Note_addCameraImage"/>        
+        <activity android:name="com.cwc.litenote.note.Note_addCameraVideo"/>        
+        <activity android:name="com.cwc.litenote.note.Note_addReadyImage"/>        
+        <activity android:name="com.cwc.litenote.note.Note_addReadyVideo"/>        
+        <activity android:name="com.cwc.litenote.note.Note_addAudio" 
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar"/>  
+        <activity android:name="com.cwc.litenote.note.Note_edit" />
+        <activity android:name="com.cwc.litenote.note.Note_view_pager" 
+            	  android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|uiMode" />
+        <!-- note: add orientation above, when doing Rotate, activity will not go through the following states: 
+             onPause/onSaveInstanceState/onStop/onDestroy/
+                                                onCreate/onStart/onRestoreInstanceState/onResume    -->
+        
+        <activity android:name="com.cwc.litenote.config.Import_selectedFileAct" />
+        <activity android:name="com.cwc.litenote.ConfigAct" android:label="@string/settings"/>
+        <activity android:name="com.cwc.litenote.util.SendMailAct" />
+        <activity android:name="com.cwc.litenote.config.Export_toSDCardAct" />
+        <activity android:name="com.cwc.litenote.config.Import_fromSDCardAct" />
+        <activity android:name="com.cwc.litenote.media.image.GalleryGridAct" />
+        <activity android:name="com.cwc.litenote.media.image.GalleryPagerAct" />
+      	<activity android:name="com.cwc.litenote.media.image.SlideshowPlayer" android:theme="@android:style/Theme.NoTitleBar"/>
+
+      			        
+        <receiver
+            android:name="com.cwc.litenote.config.DeleteFileAlarmReceiver"
+            android:enabled="true"
+             >
+   		</receiver>     
+        <receiver
+            android:name="com.cwc.litenote.note.Note_view_pagerUI"
+            android:enabled="true" />     
+   </application>
+
+</manifest>
+<!-- reference 
+     theme:
+        android:theme="@style/AppTheme" 
+        android:theme="@style/CustomTheme"
+     screen orientation:       
+        android:screenOrientation="portrait"
+
+ -->

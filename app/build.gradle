@@ -1,0 +1,25 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "25.0.0"
+
+    defaultConfig {
+        applicationId "com.cwc.litenote.alpha"
+        minSdkVersion 11
+        targetSdkVersion 21
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-project.txt'
+        }
+    }
+}
+
+dependencies {
+    compile files('libs/android-support-v13.jar')
+    compile files('libs/commons-io-2.4.jar')
+    compile files('libs/universal-image-loader-1.9.4.jar')
+}

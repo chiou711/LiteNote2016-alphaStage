@@ -1,0 +1,42 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+   	<item
+        android:id="@+id/HANDLE_CHECKED_NOTES"
+        android:orderInCategory="0"
+        android:showAsAction="always"
+        android:title="Handle Checked Notes"/>
+   	<item
+        android:id="@+id/CHECK_ALL"
+        android:orderInCategory="1"
+        android:showAsAction="always"
+        android:title="Checked All"/>
+   	<item
+        android:id="@+id/UNCHECK_ALL"
+        android:orderInCategory="2"
+        android:showAsAction="always"
+        android:title="Unchecked All"/>
+   	<item
+        android:id="@+id/INVERT_SELECTED"
+        android:orderInCategory="3"
+        android:showAsAction="always"
+        android:title="Invert Selected"/>
+   	<item
+        android:id="@+id/MOVE_CHECKED_NOTE"
+        android:orderInCategory="4"
+        android:showAsAction="always"
+        android:title="Move to"/>  
+   	<item
+        android:id="@+id/COPY_CHECKED_NOTE"
+        android:orderInCategory="5"
+        android:showAsAction="always"
+        android:title="Copy checked Note"/>
+   	<item
+        android:id="@+id/MAIL_CHECKED_NOTE"
+        android:orderInCategory="6"
+        android:showAsAction="always"
+        android:title="Mail checked Note"/>      
+   	<item
+        android:id="@+id/DELETE_CHECKED_NOTE"
+        android:orderInCategory="7"
+        android:showAsAction="always"
+        android:title="Delete checked Note"/>
+</menu>

@@ -1,0 +1,170 @@
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout 
+        android:id="@+id/pictureContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5">
+    
+    <!-- image or video view -->
+    <FrameLayout
+        android:id="@+id/image_or_video_block"     
+		android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	 >
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />	 
+        
+    <com.cwc.litenote.media.image.TouchImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+		android:padding="0dp"
+  		android:cropToPadding="true"
+  		android:scaleType="fitCenter"        
+  		android:contentDescription="image_view" />
+    <com.cwc.litenote.media.video.VideoViewCustom
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:contentDescription="video_view" />
+    <com.cwc.litenote.note.CustomWebView 
+        android:id="@+id/link_web_view"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent" 
+        style="?android:textAppearanceMedium"
+        android:lineSpacingMultiplier="1.2"
+        android:paddingLeft="3dp"
+        android:autoLink="all"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="web_view" />
+    </FrameLayout> 
+    
+    <!-- view control --> 
+    <Button
+        android:id="@+id/video_view_play_video"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+		android:visibility="gone"  />  
+		
+    <LinearLayout android:id="@+id/image_view_top"
+      	android:layout_width="match_parent"
+      	android:layout_height="wrap_content"
+      	android:layout_alignParentTop="true"
+      	android:gravity="center"
+      	android:orientation="horizontal"> 	
+	<Button
+        android:id="@+id/image_view_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+		android:visibility="gone"  />  	
+	<TextView
+        android:id="@+id/image_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:paddingLeft="5dp"
+        android:background="#7f7f7f7f"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+		android:visibility="gone"
+		  />  	
+    <Button
+        android:id="@+id/image_view_mode"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+		android:visibility="gone"  /> 
+    <Button
+        android:id="@+id/image_view_audio"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+		android:visibility="gone"  />    
+	</LinearLayout>	
+    
+    <LinearLayout android:id="@+id/video_control"
+      	android:layout_width="match_parent"
+      	android:layout_height="50dp"
+      	android:layout_alignParentBottom="true"
+      	android:gravity="center"
+      	android:orientation="horizontal"> 		
+    <Button
+        android:id="@+id/image_view_previous"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"          />
+    
+    <LinearLayout android:id="@+id/video_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:background="#7f7f7f7f"
+        android:orientation="horizontal">    
+    <TextView
+        android:id="@+id/video_current_pos"
+		android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:singleLine="true"
+        android:layout_margin="3dp"
+        android:visibility="gone" />
+   	<SeekBar
+	     android:id="@+id/video_seek_bar"
+	     android:layout_width="0dp"
+	     android:layout_weight="1"
+	     android:layout_height="wrap_content" 
+	     android:visibility="gone" />       
+    <TextView
+        android:id="@+id/video_file_length"
+		android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:singleLine="true"
+        android:layout_margin="3dp"
+        android:visibility="gone" />
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/image_view_next"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+		android:visibility="gone"  />
+    </LinearLayout>
+    <!-- end: view control -->
+    
+	</RelativeLayout>     
+	
+        
+	<View android:layout_width="match_parent" android:layout_height="3dip" android:background="#404040" />
+    <LinearLayout
+        android:id="@+id/textGroup"     
+		android:layout_width="match_parent"
+    	android:layout_height="0dp"
+    	android:layout_weight="5" 
+    	android:orientation="vertical" >
+    <com.cwc.litenote.note.CustomWebView 
+        android:id="@+id/textBody"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent" 
+        style="?android:textAppearanceMedium"
+        android:lineSpacingMultiplier="1.2"
+        android:paddingLeft="3dp"
+        android:autoLink="all"
+        android:layout_marginBottom="16dp" />
+    </LinearLayout>
+    
+</LinearLayout>

@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/ADD_NEW_FOLDER"
+          android:title="Add new folder"/>   
+    <item android:id="@+id/ENABLE_DRAWER_DRAG_AND_DROP"
+          android:title="Enable drawer drag and drop"/>   
+</menu>
